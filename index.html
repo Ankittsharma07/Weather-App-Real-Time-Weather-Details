@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Animation Blobs -->
+    <div class="background-shapes"></div>
+    <div class="background-shapes shape-2"></div>
+
+    <div class="card">
+        <!-- Search Bar -->
+        <div class="search-box">
+            <i class="fa-solid fa-location-dot location-icon"></i>
+            <input type="text" id="city-input" placeholder="Enter City..." spellcheck="false">
+            <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <!-- Main Weather Info -->
+        <div class="weather-body">
+            <!-- 3D Style Icon -->
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/weather-6546350-5376613.png" 
+                 class="weather-icon" id="weather-icon" alt="Weather Icon">
+            
+            <h1 class="temp" id="temp">24°c</h1>
+            <h2 class="city wrap" id="city">Mumbai,</h2>
+            <h2 class="Country wrap" id="Country">IN</h2>
+            <p class="description" id="description">Mostly Cloudy</p>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="details-grid">
+            <div class="detail-card">
+                <i class="fa-solid fa-water"></i>
+                <div class="info">
+                    <p class="value humidity" id="humidity">64%</p>
+                    <p class="label">Humidity</p>
+                </div>
+            </div>
+            <div class="detail-card">
+                <i class="fa-solid fa-wind"></i>
+                <div class="info">
+                    <p class="value speed" id="wind">18 km/h</p>
+                    <p class="label">Wind Speed</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error" id="error-msg">
+            <p>Invalid City Name!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
