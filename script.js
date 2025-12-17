@@ -18,6 +18,7 @@ const weatherIcons = {
     "Mist": "./weather-icon/Mist.png",
     "Haze": "./weather-icon/Haze.png",
     "Smoke": "./weather-icon/Smoke.png",
+    "Clear": "./weather-icon/Clear.png"
 };
 
 
