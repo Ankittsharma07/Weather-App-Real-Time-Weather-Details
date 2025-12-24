@@ -91,3 +91,11 @@ cityInput.addEventListener('keyup', (e) => {
 });
 
 checkWeather("mumbai");
+
+setInterval(() => {
+    const currentCity = cityName.innerText.trim();
+    if (currentCity && currentCity !== 'Unknown City' && currentCity !== '') {
+        console.log("Auto refreshing weather for: " + currentCity);
+        checkWeather(currentCity);
+    }
+}, 60000);
