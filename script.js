@@ -98,4 +98,4 @@ setInterval(() => {
         console.log("Auto refreshing weather for: " + currentCity);
         checkWeather(currentCity);
     }
-}, 60000);
+}, 2700000);
