@@ -21,23 +21,14 @@ const weatherIcons = {
     "Clear": "./weather-icon/Clear.png"
 };
 
-
-
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '0c6571307amsh17f0636c5c9993cp1bc63djsn7d5f7a01e174',
-        'X-RapidAPI-Host': 'weather-api138.p.rapidapi.com'
-    }
-};
+const API_KEY = 'f6533e7917fc3b6290f40408f37320ff';
 
 function checkWeather(city) {
-    const url = `https://weather-api138.p.rapidapi.com/weather?city_name=${city}`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
 
-    fetch(url, options)
+    fetch(url)
         .then(response => response.json())
         .then((data) => {
-            console.log(data);
             // OpenWeatherMap response structure
             const tempC = Math.round(data.main.temp - 273.15);
             temp.innerHTML = tempC + '°C';
@@ -91,11 +82,3 @@ cityInput.addEventListener('keyup', (e) => {
 });
 
 checkWeather("mumbai");
-
-setInterval(() => {
-    const currentCity = cityName.innerText.trim();
-    if (currentCity && currentCity !== 'Unknown City' && currentCity !== '') {
-        console.log("Auto refreshing weather for: " + currentCity);
-        checkWeather(currentCity);
-    }
-}, 2700000);
