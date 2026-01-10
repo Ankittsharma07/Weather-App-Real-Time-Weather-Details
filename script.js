@@ -21,7 +21,7 @@ const weatherIcons = {
     "Clear": "./weather-icon/Clear.png"
 };
 
-const API_KEY = 'f6533e7917fc3b6290f40408f37320ff';
+
 
 function checkWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
