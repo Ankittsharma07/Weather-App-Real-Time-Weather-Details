@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Background Animation Blobs -->
@@ -25,9 +27,9 @@
         <!-- Main Weather Info -->
         <div class="weather-body">
             <!-- 3D Style Icon -->
-            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/weather-6546350-5376613.png" 
-                 class="weather-icon" id="weather-icon" alt="Weather Icon">
-            
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/weather-6546350-5376613.png" class="weather-icon"
+                id="weather-icon" alt="Weather Icon">
+
             <h1 class="temp" id="temp">24°c</h1>
             <h2 class="city wrap" id="city">Mumbai,</h2>
             <h2 class="Country wrap" id="Country">IN</h2>
@@ -57,7 +59,12 @@
             <p>Invalid City Name!</p>
         </div>
     </div>
-
+    <script>
+        window.ENV = {
+            WEATHER_API_KEY: "%%VITE_WEATHER_API_KEY%%"
+        }
+    </script>
     <script src="script.js"></script>
 </body>
+
 </html>
