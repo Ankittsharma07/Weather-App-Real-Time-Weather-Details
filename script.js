@@ -21,17 +21,15 @@ const weatherIcons = {
     "Clear": "./weather-icon/Clear.png"
 };
 
-const API_KEY =
-  window.ENV?.WEATHER_API_KEY !== "%%VITE_WEATHER_API_KEY%%"
-    ? window.ENV.WEATHER_API_KEY
-    : "LOCAL_TEST_API_KEY_HERE";
-
 function checkWeather(city) {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+    const url = `/.netlify/functions/get-weather?city=${encodeURIComponent(city)}`;
 
     fetch(url)
         .then(response => response.json())
         .then((data) => {
+            if (data.cod && data.cod !== 200) {
+                throw new Error(data.message || 'City not found');
+            }
             // OpenWeatherMap response structure
             const tempC = Math.round(data.main.temp - 273.15);
             temp.innerHTML = tempC + '°C';
